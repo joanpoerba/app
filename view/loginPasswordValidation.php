@@ -20,7 +20,11 @@ require_once "../functions/loginPasswordValidationFunction.php";
       <li class="list-unstyled mt-4">
         <label for="password">Password</label><br>
         <input class="ps-2 w-100" type="password" id="password" name="password" placeholder="Masukkan password" autocomplete="off" autofocus required>
-        <p class="text-danger" style="position: absolute;">Wrong password</p>
+        <?php if (isset($loginValidatePassword)) : ?>
+          <?php if ($loginValidatePassword->loginValidatePassword == false) : ?>
+            <p class="text-danger" style="position: absolute;">Wrong password</p>
+          <?php endif; ?>
+        <?php endif; ?>
       </li>
       <li class="list-unstyled mt-5 d-flex flex-row justify-content-between align-items-center">
         <div>
@@ -33,7 +37,7 @@ require_once "../functions/loginPasswordValidationFunction.php";
       </li>
       <li class="list-unstyled mt-2">
         <button class="btn w-100 btn-primary py-2" name="loginButton">Login</button>
-        <p class="float-end mt-2">don't have any account?&nbsp<a class="text-dark" href="">Register</a></p>
+        <p class="float-end mt-2">don't have any account?&nbsp<a class="text-dark" href="register.php">Register</a></p>
       </li>
     </form>
   </section>

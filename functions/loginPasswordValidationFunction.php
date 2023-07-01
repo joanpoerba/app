@@ -32,6 +32,7 @@ class LoginValidatePassword extends Connection
               "status" => true,
               "usersUsername" => $_SESSION["loginValidateUsername"]["usersUsername"]
             ];
+            header("location: main.php");
           } else {
             $this->loginValidatePassword = false;
           }
