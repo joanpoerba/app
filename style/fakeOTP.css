@@ -1,0 +1,18 @@
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  height: 100vh !important;
+}
+
+body>section {
+  width: 300px !important;
+}
+
+.OTPCode {
+  font-size: 60px;
+}
