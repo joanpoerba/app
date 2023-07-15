@@ -21,7 +21,7 @@ require_once "../functions/fakeOTPFunction.php";
       <?php if ($login == null) : ?>
         <li class="list-unstyled">
           <label for="username">Username</label><br>
-          <input class="ps-2 w-100" type="text" id="username" name="username" placeholder="Masukkan username" autocomplete="off" autofocus required>
+          <input class="ps-2 w-100 border border-1 border-secondary rounded-2 px-2 py-1 text-dark" type="text" id="username" name="username" placeholder="Masukkan username" autocomplete="off" autofocus required>
         </li>
         <li class="list-unstyled mt-5">
           <button class="btn w-100 btn-primary py-2" name="submitButton">Submit</button>
@@ -32,7 +32,7 @@ require_once "../functions/fakeOTPFunction.php";
         <?php if ($login::$wrongUsername == true) : ?>
           <li class="list-unstyled">
             <label for="username">Username</label><br>
-            <input class="ps-2 w-100" type="text" id="username" name="username" placeholder="Masukkan username" autocomplete="off" autofocus required>
+            <input class="ps-2 w-100 border border-1 border-secondary rounded-2 px-2 py-1 text-dark" type="text" id="username" name="username" placeholder="Masukkan username" autocomplete="off" autofocus required>
             <p class="text-danger" style="position: absolute;">Wrong username</p>
           </li>
           <li class="list-unstyled mt-5">
@@ -45,12 +45,7 @@ require_once "../functions/fakeOTPFunction.php";
         <?php if ($login::$wrongUsername == false) : ?>
           <li class="list-unstyled">
             <label for="username">Isi kode OTP</label><br>
-            <input class="ps-2 w-100" type="text" id="username" name="OTPInput" placeholder="Masukkan 6 digit code" autocomplete="off" maxlength="6" autofocus required>
-            <?php if (isset($CheckOTPInput)) : ?>
-              <?php if ($CheckOTPInput->wrongOTP == true) : ?>
-                <p class="text-danger" style="position: absolute;">Wrong OTP code</p>
-              <?php endif; ?>
-            <?php endif; ?>
+            <input class="ps-2 w-100 border border-1 border-secondary rounded-2 px-2 py-1 text-dark" type="text" id="username" name="OTPInput" placeholder="Masukkan code OTP" autocomplete="off" maxlength="6" autofocus required>
           </li>
           <li class="list-unstyled mt-5">
             <button class="btn w-100 btn-primary py-2" name="submitOTPButton">Submit</button>

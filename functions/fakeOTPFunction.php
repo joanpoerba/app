@@ -52,7 +52,7 @@ class getOTP extends Connection
     $usersUsername = $_SESSION["username"];
 
     try {
-      if (!$this->connection()->query("UPDATE otp SET usersOtp = '$usersUsername', otp = '$this->OTPCode'")) {
+      if (!$this->connection()->query("UPDATE otp SET otp = '$this->OTPCode' WHERE usersOtp = '$usersUsername'")) {
         throw new Exception("something wrong in updating otp");
       }
     } catch (Exception $error) {
@@ -72,15 +72,21 @@ class CheckOTPInput extends Connection
   {
     $this->usersOTPInput = htmlspecialchars($this->connection()->real_escape_string($usersOTPInput));
 
-    $checkOTPCodeQuery = "SELECT otp FROM otp";
+    $checkOTPCodeQuery = "SELECT otp FROM otp WHERE otp = ?";
     $checkOTPCodePreparedStatement = new mysqli_stmt($this->connection(), $checkOTPCodeQuery);
 
     if ($checkOTPCodePreparedStatement->prepare($checkOTPCodeQuery)) {
+      $checkOTPCodePreparedStatement->bind_param("s", $this->usersOTPInput);
       $checkOTPCodePreparedStatement->execute();
       $result = $checkOTPCodePreparedStatement->get_result();
 
-      if ($result->fetch_assoc()["otp"] == $usersOTPInput) {
-        return $this->wrongOTP = false;
+      if ($result->num_rows == 1) {
+        $_SESSION["validOtpDatas"] = [
+          "status" => true,
+          "usersUsername" => $_SESSION["username"]
+        ];
+
+        header("location: changePassword.php");
       } else {
         return $this->wrongOTP = true;
       }

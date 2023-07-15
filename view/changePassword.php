@@ -21,7 +21,7 @@ require_once "../functions/changePasswordFunction.php";
       <li class="list-unstyled mt-4">
         <label for="password">Password</label><br>
         <div class="d-flex flex-row align-items-center border border-1 border-secondary rounded-2 px-2 py-1">
-          <input id="passwordInput" class="border-0 w-100 text-dark" type="password" id="password" name="password" placeholder="Ganti password" autocomplete="off" required>
+          <input id="passwordInput" class="border-0 w-100 text-secondary" type="password" id="password" name="password" placeholder="Ganti password" autocomplete="off" required>
           <i class="eye" style="cursor: pointer;"></i>
         </div>
       </li>
