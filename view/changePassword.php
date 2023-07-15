@@ -21,8 +21,8 @@ require_once "../functions/changePasswordFunction.php";
       <li class="list-unstyled mt-4">
         <label for="password">Password</label><br>
         <div class="d-flex flex-row align-items-center border border-1 border-secondary rounded-2 px-2 py-1">
-          <input id="passwordInput" class="border-0 w-100 text-secondary" type="password" id="password" name="password" placeholder="Ganti password" autocomplete="off" required>
-          <i class="eye"></i>
+          <input id="passwordInput" class="border-0 w-100 text-dark" type="password" id="password" name="password" placeholder="Ganti password" autocomplete="off" required>
+          <i class="eye" style="cursor: pointer;"></i>
         </div>
       </li>
       <li class="list-unstyled mt-4">
@@ -31,34 +31,7 @@ require_once "../functions/changePasswordFunction.php";
       </li>
     </form>
   </section>
-  <script>
-    const body = document.body;
-    const eye = document.querySelector(".eye");
-    const input = document.getElementById("passwordInput");
-
-    eye.setAttribute(
-      "class",
-      "eye bi bi-eye-slash-fill fs-4 d-flex justify-content-center align-items-center text-secondary"
-    );
-
-    eye.addEventListener("click", () => {
-      body.classList.toggle("showPassword");
-
-      if (body.classList.contains("showPassword")) {
-        eye.setAttribute(
-          "class",
-          "eye bi bi-eye-fill fs-4 d-flex justify-content-center align-items-center text-secondary"
-        );
-        input.setAttribute("type", "text");
-      } else {
-        eye.setAttribute(
-          "class",
-          "eye bi bi-eye-slash-fill fs-4 d-flex justify-content-center align-items-center text-secondary"
-        );
-        input.setAttribute("type", "password");
-      }
-    });
-  </script>
+  <script src="../js/showPassword.js"></script>
 </body>
 
 </html>
