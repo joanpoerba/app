@@ -49,7 +49,7 @@ require_once "../functions/loginFunction.php";
         </div>
       </li>
       <li class="list-unstyled mt-2">
-        <button class="btn w-100 btn-primary py-2" name="loginButton">Submit</button>
+        <button class="btn w-100 btn-primary py-2" name="loginButton">Login</button>
         <p class="float-end mt-2">don't have any account?&nbsp<a class="text-dark" href="register.php">Register</a></p>
       </li>
     </form>
