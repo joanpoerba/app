@@ -5,7 +5,9 @@ session_start();
 $date = new DateTime();
 $date->setTimezone(new DateTimeZone("Asia/Jakarta"));
 
-require_once "../database/connection.php";
+spl_autoload_register(function ($class) {
+  require_once "../database/" . $class . ".php";
+});
 
 if (isset($_COOKIE["ls"])) {
   if ($_COOKIE["ls"] == password_verify("true", $_COOKIE["ls"])) {

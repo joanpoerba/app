@@ -2,10 +2,12 @@
 
 session_start();
 
+spl_autoload_register(function ($class) {
+  require_once "../database/" . $class . ".php";
+});
+
 $login = null;
 $CheckOTPInput = null;
-
-require_once "../database/connection.php";
 
 class UsernameVerification extends Connection
 {

@@ -7,6 +7,10 @@ spl_autoload_register(function ($class) {
   require_once "../database/" . $class . ".php";
 });
 
+if (isset($_SESSION["loginDatas"])) {
+  header("location: ../index.php");
+}
+
 class Register extends Connection
 {
   public function __construct(public string $usersUsername, public string $usersPassword)
@@ -14,7 +18,7 @@ class Register extends Connection
     $this->usersUsername = htmlspecialchars($this->connection()->real_escape_string($usersUsername));
     $this->usersPassword = htmlspecialchars($this->connection()->real_escape_string(password_hash($usersPassword, PASSWORD_BCRYPT)));
 
-    $checkUsernameQuery = "SELECT username FROM user WHERE username = ?";
+    $checkUsernameQuery = "SELECT id, username FROM user WHERE username = ?";
     $checkUsernamePreparedStatement = new mysqli_stmt($this->connection(), $checkUsernameQuery);
 
     if ($checkUsernamePreparedStatement->prepare($checkUsernameQuery)) {
@@ -36,10 +40,15 @@ class Register extends Connection
       if ($insertPreparedStatement->prepare($insertQuery)) {
         $insertPreparedStatement->bind_param("ss", $this->usersUsername, $this->usersPassword);
         $insertPreparedStatement->execute();
-        $_SESSION["loginStatus"] = true;
-        $_SESSION["usersUsername"] = $this->usersUsername;
-        $_SESSION["usersPassword"] = $this->usersPassword;
-        header("Location: ../view/main.php");
+
+        mysqli_query($this->connection(), "INSERT INTO otp(usersOtp, otp) VALUE('$this->usersUsername', '000000')");
+
+        $_SESSION["loginDatas"] = [
+          "status" => true,
+          "usersUsername" => $this->usersUsername
+        ];
+
+        header("location: ../index.php");
       }
     }
   }
