@@ -11,3 +11,26 @@
 body {
   height: 100vh !important;
 }
+
+header>section nav ul li a>div:nth-child(2) {
+  transition: 5s !important;
+  display: none !important;
+}
+
+header>section nav ul li a:hover>div:nth-child(2) {
+  transition: 5s !important;
+  display: block !important;
+}
+
+.line{
+  width: 2px !important;
+  height: 35px !important;
+}
+
+.usersPhotoProfileWrapper{
+  background: rgb(235, 235, 235);
+}
+
+.usersPhotoProfile{
+  width: 35px;
+}
