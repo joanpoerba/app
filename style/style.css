@@ -12,12 +12,12 @@ body {
   height: 100vh !important;
 }
 
-header>section nav ul li a>div:nth-child(2) {
+header>section nav ul li a>.nonActive {
   transition: 5s !important;
   display: none !important;
 }
 
-header>section nav ul li a:hover>div:nth-child(2) {
+header>section nav ul li a:hover>.nonActive {
   transition: 5s !important;
   display: block !important;
 }
@@ -33,4 +33,8 @@ header>section nav ul li a:hover>div:nth-child(2) {
 
 .usersPhotoProfile{
   width: 35px;
+}
+
+.notFound{
+  width: 400px;
 }
