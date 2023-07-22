@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Inter' !important;
+}
+
+body {
+  height: 100vh !important;
+}
+
+header {
+  background: #fff !important;
+}
+
+header>section nav ul li {
+  cursor: pointer !important;
+}
+
+header>section nav ul li a>.nonActive {
+  display: none !important;
+}
+
+header>section nav ul li a:hover>.nonActive {
+  display: block !important;
+}
+
+.line {
+  width: 2px !important;
+  height: 35px !important;
+}
+
+.usersPhotoProfileWrapper {
+  background: rgb(235, 235, 235);
+}
+
+.usersPhotoProfile {
+  width: 30px;
+}
+
+.notFound {
+  width: 400px;
+}
+
+main{
+  padding-top: 90px !important;
+}
+
+.row aside, .row section{
+  height: 85vh !important;
+}
