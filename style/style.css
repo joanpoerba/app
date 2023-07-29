@@ -12,29 +12,31 @@ body {
   height: 100vh !important;
 }
 
+header>section nav ul li {
+  cursor: pointer !important;
+}
+
 header>section nav ul li a>.nonActive {
-  transition: 5s !important;
   display: none !important;
 }
 
 header>section nav ul li a:hover>.nonActive {
-  transition: 5s !important;
   display: block !important;
 }
 
-.line{
+.line {
   width: 2px !important;
   height: 35px !important;
 }
 
-.usersPhotoProfileWrapper{
+.usersPhotoProfileWrapper {
   background: rgb(235, 235, 235);
 }
 
-.usersPhotoProfile{
-  width: 35px;
+.usersPhotoProfile {
+  width: 30px;
 }
 
-.notFound{
+.notFound {
   width: 400px;
 }

@@ -49,7 +49,7 @@ require_once "functions/mainPageHandler.php";
             </a>
           </li>
           <li class="list-unstyled">
-            <a class="text-decoration-none d-flex flex-row justify-content-center align-items-center bg-primary px-3 py-1 rounded-5" onclick="showNotFoundPage()">
+            <a href="view/setting.php" class="text-decoration-none d-flex flex-row justify-content-center align-items-center bg-primary px-3 py-1 rounded-5">
               <div>
                 <i class="bi bi-gear-fill fs-5 text-light"></i>
               </div>
@@ -83,7 +83,7 @@ require_once "functions/mainPageHandler.php";
         <i style="cursor: pointer;" class="exitPopUpButton bi bi-x-lg fs-3 d-flex"></i>
       </div>
       <div style="height: 100%;" class="d-flex flex-column justify-content-center align-items-center my-4">
-        <img class="img-fluid w-75" src="asset/404 Error-cuate.svg" loading="lazy" alt="wrong otp">
+        <img class="img-fluid w-75" src="asset/404 Error-cuate.svg" loading="lazy" alt="404">
         <div class="mt-3">
           <p class="fs-5 fst-italic fw-semibold text-primary">Maaf halaman belum di buat :(</p>
         </div>

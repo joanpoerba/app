@@ -100,24 +100,25 @@ require_once "../functions/settingPageHandler.php";
             <?php endif; ?>
             <?php if ($toThemeSection == "active") : ?>
               <li class="list-unstyled border-bottom border-2 border-secondary d-flex justify-content-end bg-secondary">
-                <button class="btn px-3 py-2 rounded-0" name="toThemeSection">Theme</button>
+                <button class="btn px-3 py-2 rounded-0 text-light" name="toThemeSection">Theme</button>
               </li>
             <?php endif; ?>
           </ul>
         </form>
       </aside>
-      <section class="col-10 d-flex justify-content-center align-items-center">
-        <h3>
-          <?php
-          if (isset($message)) {
-            echo $message;
-          }
-          ?>
-        </h3>
+      <section class="col-10 px-5">
+        <?php
+        if (isset($toAccountSection)) {
+          echo "account";
+        }
+        if(isset($toThemeSection)){
+          require_once("../component/theme.php");
+        }
+        ?>
       </section>
     </div>
   </main>
-  <section class="notFoundWrapper container-fluid position-absolute h-100 justify-content-center align-items-center">
+  <section class="notFoundWrapper container-fluid position-absolute top-0 h-100 justify-content-center align-items-center">
     <section class="notFound position-absolute bg-light shadow-lg">
       <div class="float-end position-absolute end-0 mt-3 me-3">
         <i style="cursor: pointer;" class="exitPopUpButton bi bi-x-lg fs-3 d-flex"></i>
